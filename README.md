@@ -87,6 +87,97 @@ sudo apt-get install python-numpy
 sudo apt-get install python3-matplotlib
 ```
 
+Create a directory and change the working directory to work there:
+```Bash
+mkdir face_detection
+cd face_detection
+```
+
+There are two face detection algorithms that have been implemented in OpenCV for some time, the Local Binary Pattern(LBP) classifier. and the Haar Classifier. In this article we will use the Haar Classifier. There are also newer face classifiers that are included in newer versions of OpenCV and other methods that can be added if desired, but the Haar produces good results and is easy to implement.
+
+For the next step you will need to be able to edit a text file. Unfortunately, there are strong warnings in the current WSL system against using a Windows tool to edit files in the WSL environment. It is not terribly difficult to locate the files, but you should not edit them, currently, except through Linux tools. Many experienced Linux users use a tool call "vi" or "vim". An easy too to learn is "nano" which can be invoked simply with
+```
+nano
+```
+or else with a file name. Please enter
+```
+nano face-detect.py 
+```
+Nano does take some learning. You will find hints and prompts at the bottom of the nano screen. The carat character ^ indicates the Control key, so for example the hint for "Write Out" is "^D" which indicdates Control-d. Exiting through ^X (Control-X) will prompt you to save the file.
+
+Go to your Windows computer to the C: drive and create these directories:
+```
+C:\face-detect\
+C:\face-detect\inputfiles\
+C:\face-detect\outputfiles
+```
+and copy some image files into those directories. You may use the example files in this project--the ones that do not begin with "out-"--as examples, and download them to C:\face-detect\inputfiles\
+
+You should be able to enter the code below into your editor, save the code, and run it through entering
+
+```
+python3 face-detect.py
+```
+
+If run successfully, the output files will be written with the same file name as the input file but prepended with "out-", and will be placed in the C:\face-detect\outputfiles\ directory you created.
+
+Note that in WSL Linux, the C: drive is represented as /mnt/c/ and each directory from there should be similar to Windows (although space characters must be handled specially), using slash characters instead of backslash characters. So where you see in the code 
+
+```Python
+source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
+```
+
+it is indicating to the system the Windows location "C:\face-detect\input files" and then the pattern collects all files ending with "jpg".
+
+Here is the code. Note that it can also provide eye detection, but I have commented this out for this example.
+
+```Python
+# mostly from:
+#https://docs.opencv.org/3.4.1/d7/d8b/tutorial_py_face_detection.html
+
+import os
+import glob
+import numpy as np
+import cv2 as cv
+face_cascade = cv.CascadeClassifier('/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_frontalface_default.xml')
+eye_cascade = cv.CascadeClassifier('/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_eye.xml')
+
+source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
+dest_dir = "/mnt/c/face-detect/outputfiles/out-"
+
+def do_each_file( source_filepattern ):
+  for imagefile in glob.glob(source_filepattern):
+    filename = os.path.basename( imagefile )
+    #print(imagefile)
+    #print(filename)
+    print(filename)
+    outputfile = dest_dir + filename
+    detect_face(imagefile, outputfile)
+  return;
+
+def detect_face( imgpath, outputfile ):
+  img = cv.imread(imgpath)
+  #print (img)
+  gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+  faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+  for (x,y,w,h) in faces:
+      cv.rectangle(img,(x,y),(x+w,y+h),(0,0,255),4)
+      roi_gray = gray[y:y+h, x:x+w]
+      roi_color = img[y:y+h, x:x+w]
+      #eyes = eye_cascade.detectMultiScale(roi_gray)
+      #for (ex,ey,ew,eh) in eyes:
+      #    cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+  cv.imwrite( outputfile, img );
+  #cv.imshow('img',img)
+  #cv.waitKey(0)
+  #cv.destroyAllWindows()
+  return;
+
+do_each_file( source_filepattern )
+```
+
+
+
 
 
 
