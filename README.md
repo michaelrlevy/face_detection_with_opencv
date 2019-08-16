@@ -2,6 +2,10 @@
 
 OpenCV is a very popular, free and open source software system used for a large variety of computer vision applications. This article is intended to help you get started in experimenting with OpenCV and as an interesting example the article discusses how to detect faces in images.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010">
+</p>
+
 Note that face detection is a much different, and much simpler task than facial recognition. Face detection uses a computer vision algorithm to detect the existence and location of face images within an image file. Facial recognition can be used to identify a person or match face images with each other. 
 
 One could imagine a large collection of scanned archival images, some of which contain photographs of people, and an archival user would be interested in locating and viewing these photographs where they exist in the collection.
