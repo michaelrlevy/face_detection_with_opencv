@@ -28,6 +28,11 @@ quit()
 in order to exit the Python environment. An alternative method to exit is pressing Ctl-D (Control-D).
 You may be prompted to enter your Linux user's password.
 
+Below are output files indicating that the system has identified faces in the images.
+
+https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/1997.A.0245_001_001_0001.jpg
+
+
 In order to use very recent versions of OpenCV, you will need to download and compile the program "from source," and there are many resources available to help you do that. However, the purpose of this article is to help get started with OpenCV, and it is now rather easy to install with precompiled packages, which makes the installation task much easier and less error-prone.
 
 "sudo" is a Linux command that gives your Linux user a higher level of privileges. Some commands below begin with "sudo"; the system may will prompt you for your user's password before proceeding. With many of the "apt" install scripts you will need to respond "Y" when prompted "Do you want to continue? [Y]
@@ -175,6 +180,25 @@ def detect_face( imgpath, outputfile ):
 
 do_each_file( source_filepattern )
 ```
+
+Below are some example files indicating that OpenCV has detected faces in these images.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0001.jpg" width="400" title="1997.A.0245_001_001_0001">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0005.jpg" width="400" title="out-2016.477.1_001_001_0005">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0001.jpg" width="400" title="1997.A.0245_001_001_0001">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010">
+</p>
+
 
 
 
