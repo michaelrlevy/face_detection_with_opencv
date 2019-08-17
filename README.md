@@ -192,15 +192,15 @@ Below are some example files indicating that OpenCV has detected faces in these 
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0003.jpg" width="400" title="out-2016.477.1_001_001_0003">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0003.jpg" width="400" title="out-1997.A.0245_001_001_0003.jpg">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0005.jpg" width="400" title="1997.A.0245_001_001_0005">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0005.jpg" width="400" title="out-2016.477.1_001_001_0005.jpg">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010">
+  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010.jpg">
 </p>
 
 
