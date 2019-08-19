@@ -138,6 +138,11 @@ source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
 ```
 it is indicating to the system the Windows location "C:\face-detect\inputfiles\" and the "*jpg" will cause the program to gather all of the files ending in "jpg" and send each file to be processed.
 
+In the code example below, note a file path to files named haarcascade_frontalface_default.xml and haarcascade_eye.
+
+
+
+
 Here is the code. Note that it can also provide eye detection, but I have commented this out for this example.
 
 ```Python
