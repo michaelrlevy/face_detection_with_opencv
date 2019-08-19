@@ -55,6 +55,8 @@ sudo apt-get upgrade
 
 This may take some time and may also require you to enter "Y" to allow the update package to proceed, and you may at different times be prompted to allow the update to restart Ubuntu Linux. If you are using this in WSL, this will just restart Linux, without restarting your Windows computer.
 
+It is possible to install OpenCV with the "apt" system. However "apt" may have a rather old version of OpenCV. A much newer version of OpenCV may be installed through using the "pip" system, which is a recommended tool for installing many Python packagers. Luckly, the OpenCV version available through "pip" is much newer. Since we wish to use Python3, we will install a version of "pip" that is involved through "pip3" as in the examples below. Here is how to install "pip3":
+
 ```
 sudo apt install python3-pip
 ```
@@ -65,7 +67,6 @@ Enter
 ```
 sudo pip3 install opencv-python
 ```
-Note that I found that using the "pip3 install" mentioned above resulted in a recent version of OpenCV, whereas using "sudo apt-get install python-opencv" resulted in a much earlier version.
 
 At this point you should be able to enter a Python environment by entering
 ```
@@ -135,8 +136,7 @@ Note that in WSL Linux, the C: drive is represented as /mnt/c/ and each director
 ```Python
 source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
 ```
-
-it is indicating to the system the Windows location "C:\face-detect\input files" and then the pattern collects all files ending with "jpg".
+it is indicating to the system the Windows location "C:\face-detect\inputfiles\" and the "*jpg" will cause the program to gather all of the files ending in "jpg" and send each file to be processed.
 
 Here is the code. Note that it can also provide eye detection, but I have commented this out for this example.
 
@@ -155,32 +155,28 @@ source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
 dest_dir = "/mnt/c/face-detect/outputfiles/out-"
 
 def do_each_file( source_filepattern ):
-  for imagefile in glob.glob(source_filepattern):
+    for imagefile in glob.glob(source_filepattern):
     filename = os.path.basename( imagefile )
-    #print(imagefile)
-    #print(filename)
-    print(filename)
-    outputfile = dest_dir + filename
-    detect_face(imagefile, outputfile)
-  return;
+        print(filename)
+        outputfile = dest_dir + filename
+        detect_face(imagefile, outputfile)
+    return;
 
 def detect_face( imgpath, outputfile ):
-  img = cv.imread(imgpath)
-  #print (img)
-  gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-  faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-  for (x,y,w,h) in faces:
-      cv.rectangle(img,(x,y),(x+w,y+h),(0,0,255),4)
-      roi_gray = gray[y:y+h, x:x+w]
-      roi_color = img[y:y+h, x:x+w]
-      #eyes = eye_cascade.detectMultiScale(roi_gray)
-      #for (ex,ey,ew,eh) in eyes:
-      #    cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-  cv.imwrite( outputfile, img );
-  #cv.imshow('img',img)
-  #cv.waitKey(0)
-  #cv.destroyAllWindows()
-  return;
+    img = cv.imread(imgpath)
+    #print (img)
+    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    for (x,y,w,h) in faces:
+        cv.rectangle(img,(x,y),(x+w,y+h),(0,0,255),4)
+        roi_gray = gray[y:y+h, x:x+w]
+        roi_color = img[y:y+h, x:x+w]
+        # uncomment the next 3 lines to also add Haar eye detection
+        #eyes = eye_cascade.detectMultiScale(roi_gray)
+        #for (ex,ey,ew,eh) in eyes:
+        #cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+    cv.imwrite( outputfile, img );
+    return;
 
 do_each_file( source_filepattern )
 ```
