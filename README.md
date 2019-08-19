@@ -138,10 +138,23 @@ source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
 ```
 it is indicating to the system the Windows location "C:\face-detect\inputfiles\" and the "*jpg" will cause the program to gather all of the files ending in "jpg" and send each file to be processed.
 
-In the code example below, note a file path to files named haarcascade_frontalface_default.xml and haarcascade_eye.
+In the code example below, note a file path to files named haarcascade_frontalface_default.xml and haarcascade_eye.xml
 
-
-
+As you can see the full path to those files is rather long and complex, and it may not be clear to you where the OpenCV package has placed these files. Here is a technique that may help you to locate those files. Linux provides a convenient method to search files in your Linux filesystem. First you may need to update the location database by running 'updatedb'. This may time some time to run, especially the first time. Then you can use the 'locate' command to look for filenames or search for partial filenames.
+```
+sudo updatedb
+```
+After this has run, you may enter
+```
+locate haarcascade
+```
+or
+```
+locate haarcascade_frontalface_default
+```
+On the system as tested the result is
+/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_frontalface_default.xml
+and we use that path in cv.CascadeClassifier()
 
 Here is the code. Note that it can also provide eye detection, but I have commented this out for this example.
 
@@ -154,7 +167,8 @@ import glob
 import numpy as np
 import cv2 as cv
 face_cascade = cv.CascadeClassifier('/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_frontalface_default.xml')
-eye_cascade = cv.CascadeClassifier('/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_eye.xml')
+# uncomment the next line if you wish to locate eyes
+#eye_cascade = cv.CascadeClassifier('/usr/local/lib/python3.6/dist-packages/cv2/data/haarcascade_eye.xml')
 
 source_filepattern = '/mnt/c/face-detect/inputfiles/*jpg'
 dest_dir = "/mnt/c/face-detect/outputfiles/out-"
