@@ -205,13 +205,13 @@ Displayed below are some example files indicating that OpenCV has detected faces
 
 Note that some research indicate that another method Multi-task Cascaded Convolutional Networks (MTCNN) may do a better job of face detection than Haar while maintaining good speed of execution. For those considering a project using face detection, investigating MTCNN may be worthwhile.
 
-![alt_text](out-1997.A.0245_001_001_0001.jpg?raw=true "Sample output file from 1997.A.0245_001_001_0001")
+![alt_text](out-1997.A.0245_001_001_0001.jpg?raw=true "Example output file from 1997.A.0245_001_001_0001")
 
-![alt_text](out-1997.A.0245_001_001_0003.jpg "Sample output file from 1997.A.0245_001_001_0003")
+![alt_text](out-1997.A.0245_001_001_0003.jpg?raw=true "Example output file from 1997.A.0245_001_001_0003")
 
-![alt_text](out-2016.477.1_001_001_0005.jpg "Sample output file from 2016.477.1_001_001_0005")
+![alt_text](out-2016.477.1_001_001_0005.jpg?raw=true "Example output file from 2016.477.1_001_001_0005")
 
-![alt_text](out-2016.477.1_001_001_0010.jpg "Sample output file from 2016.477.1_001_001_0010")
+![alt_text](out-2016.477.1_001_001_0010.jpg?raw=true "Example output file from 2016.477.1_001_001_0010")
 
 
 
