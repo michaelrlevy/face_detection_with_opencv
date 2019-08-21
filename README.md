@@ -2,9 +2,7 @@
 
 OpenCV is a very popular, free and open source software system used for a large variety of computer vision applications. This article is intended to help you get started in experimenting with OpenCV and as an interesting example the article discusses how to detect faces in images.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010">
-</p>
+![2016.477.1_001_001_0010](out-2016.477.1_001_001_0010.jpg)
 
 Note that face detection is a much different, and much simpler task than facial recognition. Face detection uses a computer vision algorithm to detect the existence and location of face images within an image file. Facial recognition can be used to identify a person or match face images with each other. 
 
@@ -200,22 +198,27 @@ def detect_face( imgpath, outputfile ):
 do_each_file( source_filepattern )
 ```
 
-Below are some example files indicating that OpenCV has detected faces in these images.
+In the project you will find a set of input images that you can copy into the input directory and a set of images that are output by the program. Note that for convenient display in this paper, the output images have been resized by 50% in width and height.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0001.jpg" width="400" title="1997.A.0245_001_001_0001">
-</p>
+Displayed below are some example files indicating that OpenCV has detected faces in these images. Faces are indicated with red rectangles. The use case as described above has only to do with selecting images that have faces within a large set of images where only some have faces. To perform that task one would need only the images where any face is detected. However, it is interesting to have a visual indication of which parts of a small typical image set is recognized as being a face. In some examples, we can see faces that are not recognized by this method, and in the third image we can see that this method recognizes a face where there is none.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0003.jpg" width="400" title="out-1997.A.0245_001_001_0003.jpg">
-</p>
+Note that some research indicate that another method Multi-task Cascaded Convolutional Networks (MTCNN) may do a better job of face detection than Haar while maintaining good speed of execution. For those considering a project using face detection, investigating MTCNN may be worthwhile.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0005.jpg" width="400" title="out-2016.477.1_001_001_0005.jpg">
-</p>
+![1997.A.0245_001_001_0001](out-1997.A.0245_001_001_0001.jpg)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010.jpg">
+![1997.A.0245_001_001_0003](out-1997.A.0245_001_001_0003.jpg)
+
+![2016.477.1_001_001_0005](out-2016.477.1_001_001_0005.jpg)
+
+![2016.477.1_001_001_0010](out-2016.477.1_001_001_0010.jpg)
+
+<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0001.jpg" width="400" title="1997.A.0245_001_001_0001">
+
+<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0003.jpg" width="400" title="out-1997.A.0245_001_001_0003.jpg">
+
+<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0005.jpg" width="400" title="out-2016.477.1_001_001_0005.jpg">
+
+<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010.jpg">
 </p>
 
 
