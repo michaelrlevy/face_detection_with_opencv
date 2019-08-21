@@ -212,15 +212,6 @@ Note that some research indicate that another method Multi-task Cascaded Convolu
 
 ![2016.477.1_001_001_0010](out-2016.477.1_001_001_0010.jpg)
 
-<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0001.jpg" width="400" title="1997.A.0245_001_001_0001">
-
-<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-1997.A.0245_001_001_0003.jpg" width="400" title="out-1997.A.0245_001_001_0003.jpg">
-
-<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0005.jpg" width="400" title="out-2016.477.1_001_001_0005.jpg">
-
-<img src="https://raw.githubusercontent.com/michaelrlevy/face_detection_with_opencv/master/out-2016.477.1_001_001_0010.jpg" width="400" title="out-2016.477.1_001_001_0010.jpg">
-</p>
-
 
 
 
