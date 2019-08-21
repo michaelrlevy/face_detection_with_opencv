@@ -2,7 +2,8 @@
 
 OpenCV is a very popular, free and open source software system used for a large variety of computer vision applications. This article is intended to help you get started in experimenting with OpenCV and as an interesting example the article discusses how to detect faces in images.
 
-![2016.477.1_001_001_0010](out-2016.477.1_001_001_0010.jpg)
+![alt_text](./out-2016.477.1_001_001_0010.jpg?raw=true "Example output file for 2016.477.1_001_001_0010.jpg")
+
 
 Note that face detection is a much different, and much simpler task than facial recognition. Face detection uses a computer vision algorithm to detect the existence and location of face images within an image file. Facial recognition can be used to identify a person or match face images with each other. 
 
@@ -204,13 +205,13 @@ Displayed below are some example files indicating that OpenCV has detected faces
 
 Note that some research indicate that another method Multi-task Cascaded Convolutional Networks (MTCNN) may do a better job of face detection than Haar while maintaining good speed of execution. For those considering a project using face detection, investigating MTCNN may be worthwhile.
 
-![1997.A.0245_001_001_0001](out-1997.A.0245_001_001_0001.jpg)
+![alt_text](out-1997.A.0245_001_001_0001.jpg?raw=true "Sample output file from 1997.A.0245_001_001_0001")
 
-![1997.A.0245_001_001_0003](out-1997.A.0245_001_001_0003.jpg)
+![alt_text](out-1997.A.0245_001_001_0003.jpg "Sample output file from 1997.A.0245_001_001_0003")
 
-![2016.477.1_001_001_0005](out-2016.477.1_001_001_0005.jpg)
+![alt_text](out-2016.477.1_001_001_0005.jpg "Sample output file from 2016.477.1_001_001_0005")
 
-![2016.477.1_001_001_0010](out-2016.477.1_001_001_0010.jpg)
+![alt_text](out-2016.477.1_001_001_0010.jpg "Sample output file from 2016.477.1_001_001_0010")
 
 
 
